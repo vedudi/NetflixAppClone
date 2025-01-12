@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import "./global.css"
 
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <SafeAreaView>
+      <Text className='text-3xl font-extrabold color-blue-600'>App</Text>
+    </SafeAreaView>
   )
 }
 
