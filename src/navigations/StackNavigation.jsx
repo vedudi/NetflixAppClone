@@ -1,14 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const deneme = () => {
+const StackNavigation = () => {
   return (
     <View>
-      <Text>deneme</Text>
+      <Text>StackNavigation</Text>
     </View>
   );
 };
 
-export default deneme;
+export default StackNavigation;
 
 const styles = StyleSheet.create({});
