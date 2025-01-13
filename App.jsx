@@ -1,16 +1,16 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import "./global.css"
-
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import './global.css';
+import AppNavigation from './src/navigations/AppNavigation';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text className='text-3xl font-extrabold color-blue-600'>App</Text>
-    </SafeAreaView>
-  )
-}
+    <View style={{flex:1}}>
+      <AppNavigation />
+    </View>
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
