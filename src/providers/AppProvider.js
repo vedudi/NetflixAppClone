@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import {Store} from '../app/store';
 
 const AppProvider = ({children}) => {
-  return <Provider store={Store}> {children} </Provider>;
+  return <Provider store={Store}>{children}</Provider>;
 };
 
 export default AppProvider;

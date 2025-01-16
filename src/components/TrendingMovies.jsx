@@ -10,7 +10,7 @@ const TrendingMovies = () => {
   }, [dispatch]);
   return (
     <View>
-      <Text>TrendingMovies</Text>
+      <Text></Text>
     </View>
   );
 };

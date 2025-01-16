@@ -23,6 +23,8 @@ import {
 
 import BackAndFavorite from '../components/BackAndFavorite';
 import LinearGradient from 'react-native-linear-gradient';
+import Cast from '../components/Cast';
+import MovieList from './MovieList';
 
 const MovieScreen = () => {
   const {id} = useRoute().params;
@@ -70,9 +72,11 @@ const MovieScreen = () => {
         </View>
         <View className="flex-row justify-center my-4">
           {movieDetail?.genres?.map((genre, index) => {
-            let shotDot = index + 1 !== movieDetail.genres.lenght;
+            let shotDot = index + 1 !== movieDetail.genres.length;
             return (
-              <Text className="text-neutral-400 font-semibold text-base">
+              <Text
+                key={index}
+                className="text-neutral-400 font-semibold text-base">
                 {''}
                 {genre.name}
                 {''}
@@ -85,6 +89,14 @@ const MovieScreen = () => {
           <Text className="text-neutral-400 mx-4 mt-2 tracking-wide">
             {movieDetail?.overview}
           </Text>
+          {movieCredit?.length > 0 && <Cast data={movieCredit} />}
+          {movieSimilar?.length > 0 && (
+            <MovieList
+              title={'Similar Movies'}
+              data={movieSimilar}
+              hideSeeAll
+            />
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
