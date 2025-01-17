@@ -3,6 +3,8 @@ import {
   getMovieCredits,
   getMovieDetails,
   getMovieSimilar,
+  getPersonDetail,
+  getPersonMovie,
   getTopRatedMovies,
   getTrendingMovies,
   getUpComingMovies,
@@ -11,6 +13,8 @@ import {
   setMovieCreditState,
   setMovieDetailState,
   setMovieSimilarState,
+  setPersonDetailState,
+  setPersonMovieState,
   setTopRatedState,
   setTrendingState,
   setUpComingState,
@@ -62,5 +66,21 @@ export const GetMovieSimilar = createAsyncThunk(
     const response = await getMovieSimilar(id);
 
     dispatch(setMovieSimilarState(response.results));
+  },
+);
+export const GetPersonDetail = createAsyncThunk(
+  'movie/getPersonDetail',
+  async (id, {dispatch}) => {
+    const response = await getPersonDetail(id);
+
+    dispatch(setPersonDetailState(response));
+  },
+);
+export const GetPersonMovie = createAsyncThunk(
+  'movie/getPersonMovie',
+  async (id, {dispatch}) => {
+    const response = await getPersonMovie(id);
+
+    dispatch(setPersonMovieState(response.cast));
   },
 );

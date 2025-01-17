@@ -5,7 +5,7 @@ import PersonListItem from './PersonListItem';
 const Cast = ({data}) => {
   return (
     <View>
-      <Text className="text-white">Cast</Text>
+      <Text className="text-white text-xl m-4"> Top Cast </Text>
       <FlatList
         data={data}
         renderItem={({item}) => <PersonListItem person={item} />}

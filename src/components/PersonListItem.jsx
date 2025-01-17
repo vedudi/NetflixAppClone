@@ -1,9 +1,14 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {AppScreens} from '../navigations/AppScreens';
 
 const PersonListItem = ({person}) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity className="mr-4 items-center">
+    <TouchableOpacity
+      onPress={() => navigation.navigate(AppScreens.Person, {id: person.id})}
+      className="mr-4 items-center">
       <View className="rounded-full w-20 h-20 overflow-hidden items-center border border-neutral-500">
         <Image
           className="w-20 h-20 rounded-xl"

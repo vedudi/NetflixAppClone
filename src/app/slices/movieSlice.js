@@ -7,6 +7,8 @@ const initialState = {
   movieCredit: [],
   movieSimilar: [],
   movieDetail: {},
+  personDetail: {},
+  personMovie: [],
   loading: false,
   error: false,
 };
@@ -33,6 +35,12 @@ const MovieReducer = createSlice({
     setMovieSimilarState: (state, action) => {
       state.movieSimilar = action.payload;
     },
+    setPersonDetailState: (state, action) => {
+      state.personDetail = action.payload;
+    },
+    setPersonMovieState: (state, action) => {
+      state.personMovie = action.payload;
+    },
   },
 });
 export const {
@@ -42,5 +50,7 @@ export const {
   setMovieDetailState,
   setMovieCreditState,
   setMovieSimilarState,
+  setPersonDetailState,
+  setPersonMovieState,
 } = MovieReducer.actions;
 export default MovieReducer.reducer;
