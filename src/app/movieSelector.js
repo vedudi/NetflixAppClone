@@ -30,3 +30,11 @@ export const getPersonMovieState =
   () =>
   ({movie: {personMovie}}) =>
     personMovie;
+export const getSearchMovieState =
+  () =>
+  ({movie: {searchMovie}}) =>
+    searchMovie;
+export const getSearchResultState =
+  () =>
+  ({movie: {searchResult}}) =>
+    searchResult;

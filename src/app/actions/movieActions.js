@@ -5,6 +5,7 @@ import {
   getMovieSimilar,
   getPersonDetail,
   getPersonMovie,
+  getSearchMovie,
   getTopRatedMovies,
   getTrendingMovies,
   getUpComingMovies,
@@ -15,6 +16,7 @@ import {
   setMovieSimilarState,
   setPersonDetailState,
   setPersonMovieState,
+  setSearchMovieState,
   setTopRatedState,
   setTrendingState,
   setUpComingState,
@@ -82,5 +84,13 @@ export const GetPersonMovie = createAsyncThunk(
     const response = await getPersonMovie(id);
 
     dispatch(setPersonMovieState(response.cast));
+  },
+);
+export const GetSearchMovie = createAsyncThunk(
+  'movie/getPersonMovie',
+  async (id, {dispatch}) => {
+    const response = await getSearchMovie(id);
+
+    dispatch(setSearchMovieState(response.results));
   },
 );
