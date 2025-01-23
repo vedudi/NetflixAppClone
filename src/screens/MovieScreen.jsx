@@ -41,7 +41,7 @@ const MovieScreen = () => {
   return (
     <SafeAreaView className="flex-1 bg-neutral-900">
       <ScrollView>
-        <BackAndFavorite isAbsolute />
+        <BackAndFavorite isAbsolute movie={movieDetail} />
         <View>
           <Image
             source={{

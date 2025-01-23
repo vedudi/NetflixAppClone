@@ -27,7 +27,7 @@ const TabNavigation = () => {
             <Icon name="home" color={color} size={size} />
           ),
         }}
-        name={AppScreens.Home}
+        name={AppScreens.Tab}
         component={StackNavigation}
       />
       <Tab.Screen

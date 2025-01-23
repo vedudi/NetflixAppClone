@@ -8,9 +8,26 @@ import {
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  addFavorite,
+  removeFavorite,
+  selectFavorites,
+} from '../app/slices/favoriteSlice';
 
-const BackAndFavorite = ({isAbsolute}) => {
+const BackAndFavorite = ({isAbsolute, movie}) => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.some(fav => fav.id === movie.id);
+
+  const handleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(movie));
+    } else {
+      dispatch(addFavorite(movie));
+    }
+  };
   return (
     <SafeAreaView
       className={`flex-row justify-between items-center my-5  mx-10 z-20 ${
@@ -21,8 +38,12 @@ const BackAndFavorite = ({isAbsolute}) => {
         onPress={() => navigation.goBack()}>
         <Icon name="left" color="white" size={25} />
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Icon name="heart" color="white" size={25} />
+      <TouchableOpacity onPress={handleFavorite}>
+        <Icon
+          name="heart"
+          color={isFavorite ? 'yellowgreen' : '#fff'}
+          size={25}
+        />
       </TouchableOpacity>
     </SafeAreaView>
   );
