@@ -5,14 +5,11 @@ const PersonCard = ({person, personMovies}) => {
   const {width, height} = Dimensions.get('window');
   return (
     <View className="items-center mt-3">
-      <View className="w-72 h-72 items-center rounded-full overflow-hidden  border-neutral-500 border-2">
+      <View className="w-72 h-72 items-center rounded-full overflow-hidden border-neutral-500 border-2">
         <Image
+          className="w-72 h-72 items-center rounded-full overflow-hidden "
           source={{
             uri: `https://image.tmdb.org/t/p/w500${person.profile_path}`,
-          }}
-          style={{
-            width: width * 0.74,
-            height: height * 0.38,
           }}
         />
       </View>

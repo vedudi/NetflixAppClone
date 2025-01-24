@@ -19,7 +19,7 @@ const PersonScreen = () => {
   }, [id, dispatch]);
   return (
     <ScrollView className="bg-neutral-900 flex-1">
-      <BackAndFavorite />
+      <BackAndFavorite showHeart={false} />
       <PersonCard person={person} personMovies={personMovies} />
     </ScrollView>
   );

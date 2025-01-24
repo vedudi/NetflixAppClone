@@ -15,11 +15,11 @@ import {
   selectFavorites,
 } from '../app/slices/favoriteSlice';
 
-const BackAndFavorite = ({isAbsolute, movie}) => {
+const BackAndFavorite = ({isAbsolute, movie, showHeart = true}) => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const favorites = useSelector(selectFavorites);
-  const isFavorite = favorites.some(fav => fav.id === movie.id);
+  const isFavorite = favorites.some(fav => fav?.id === movie?.id);
 
   const handleFavorite = () => {
     if (isFavorite) {
@@ -38,13 +38,15 @@ const BackAndFavorite = ({isAbsolute, movie}) => {
         onPress={() => navigation.goBack()}>
         <Icon name="left" color="white" size={25} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleFavorite}>
-        <Icon
-          name="heart"
-          color={isFavorite ? 'yellowgreen' : '#fff'}
-          size={25}
-        />
-      </TouchableOpacity>
+      {showHeart && (
+        <TouchableOpacity onPress={handleFavorite}>
+          <Icon
+            name="heart"
+            color={isFavorite ? 'yellowgreen' : '#fff'}
+            size={25}
+          />
+        </TouchableOpacity>
+      )}
     </SafeAreaView>
   );
 };
